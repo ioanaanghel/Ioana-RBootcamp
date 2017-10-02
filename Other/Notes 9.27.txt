@@ -1,0 +1,48 @@
+for (j in 1:3) {
+  for(k in 1:5){
+    cat(bankAccounts[j]," ")
+    bankAccounts[j] <- (bankAccounts[j] - house[j] - food[j] - fun[j] + income[j])
+    cat(bankAccounts[j]," ")
+    bankAccounts[j] <- interestRate*bankAccounts[j] + bankAccounts[j]
+    cat(bankAccounts[j]," ")
+  }
+}
+bankAccounts
+
+#set N = 100
+#set R = 1.05
+
+# loop over the to year
+N(t+1) = R x N(t)
+
+initialize variables
+loop through time
+---------------
+
+
+tt <- 0
+N0 <- 100
+RR <- 1.05
+pop.size = numeric(11)
+
+NN <-matrix(NA, nrow=1, ncol=11)
+NN[1] <-N0
+#sets value at first point in vector
+
+for(tt in 1:100){ 
+NN(tt+1) = RR*NN(tt)
+}
+
+
+
+function to create a population size
+create vector
+
+#keep record of pop size as it changes
+
+
+------------------------
+NN <-matrix(NA, nrow=1, ncol=11)
+
+-----------------
+N(t+1) = N(t)(1+rd(1-(N(t)/K))
