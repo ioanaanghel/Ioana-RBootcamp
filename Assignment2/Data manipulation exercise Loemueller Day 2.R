@@ -185,6 +185,7 @@ plot(log_sort_pvals, log_exp_pvals)
 #   Add a diagonal line to the QQ plot.
 
 abline(a=0,b=1,lty=5, lwd =3, col=2)
+# a is Y intercept, b is slope, h = horizonatal line y value
 
 #######################################################################################################
 #2  Researchers are very interested in testing whether certain alleles are present in higher frequency 
@@ -222,5 +223,11 @@ quantile(zz[,2])[4]
 #######################################################################################################
 #2d. Make a density plot of the distribution of phenotypes (i.e. the blood glucose levels). Add vertical
 #     lines to the plot to denote the 25% and 75% tails of the distribution.
+
+
+phen=zz$glucose_mmolperL
+hist(phen)
+abline(h=quantile(zz[,2])[4],lwd =1, col=3)
+abline(h=quantile(zz[,2])[2],lwd =1, col=3)
 
 

@@ -1,0 +1,20 @@
+KK <- 1000
+N0 <- 100
+ttMax <-50
+aa <- 0.1
+rr <- seq(0.1,0.9,aa)
+
+duration <- seq(0,ttMax,1)
+
+halftime <- vector('numeric',10)
+  
+#vector of half time to carrying capacity for each of the growth rates in "duration"
+
+for (jj in 1:length(rr)){
+  nvec <- RickerFun(rr[jj],N0,KK,ttMax)
+   vec <- sort(which(nvec >= KK/2))[1]
+   halftime[jj] <- duration[vec]
+}
+par(mfrow=c(1,1))
+
+plot(rr,halftime, xlab = "r",ylab="Haltime", col='blue',type='l')
